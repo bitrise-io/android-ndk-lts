@@ -9,6 +9,14 @@ echo '#'
 echo
 
 echo
+echo "--- Bitrise CLI tool versions"
+ver_line="$(bitrise --version)" ;                 echo "* bitrise: $ver_line"
+ver_line="$(stepman --version)" ;                 echo "* stepman: $ver_line"
+ver_line="$(envman --version)" ;                  echo "* envman: $ver_line"
+echo "========================================"
+echo
+
+echo
 echo "=== Revision / ID ======================"
 if [ -z "$BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK" ] ; then
   echo " [!] No BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK defined!"
