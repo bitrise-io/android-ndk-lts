@@ -2,9 +2,21 @@ FROM bitriseio/android-ndk:2016_05_26_1
 
 
 # ------------------------------------------------------
-# --- Install / update required tools
 
 RUN apt-get update -qq
+
+
+# ------------------------------------------------------
+# --- Git config
+
+# Git config
+RUN git config --global user.email builds@bitrise.io
+RUN git config --global user.name "Bitrise Bot"
+
+# ------------------------------------------------------
+# --- SSH config
+
+COPY ./ssh/config /root/.ssh/config
 
 
 # ------------------------------------------------------
@@ -30,5 +42,5 @@ RUN /root/.bitrise/tools/stepman update
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2016_08_10_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2016_09_22_1
 CMD bitrise --version

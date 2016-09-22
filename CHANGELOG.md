@@ -1,3 +1,14 @@
+## `v2016_09_22_1`
+
+* ssh config to match the non LTS stack's (`StrictHostKeyChecking` disabled)
+* git config to match the non LTS stack's : email and name set to builds@bitrise.io / Bitrise Bot
+
+
+## `v2016_09_16_1`
+
+* `bitrise` (CLI): `1.4.0`
+
+
 ## `v2016_08_10_1`
 
 * `bitrise` (CLI): `1.3.7`
