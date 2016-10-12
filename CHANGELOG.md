@@ -1,3 +1,8 @@
+## `v2016_10_12_1`
+
+* `bitrise` (CLI): `1.4.1`
+
+
 ## `v2016_09_22_1`
 
 * ssh config to match the non LTS stack's (`StrictHostKeyChecking` disabled)
