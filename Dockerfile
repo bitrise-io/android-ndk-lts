@@ -24,7 +24,7 @@ COPY ./ssh/config /root/.ssh/config
 
 #
 # Install Bitrise CLI
-RUN curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.4.3/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise
+RUN curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.4.4/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise
 RUN chmod +x /usr/local/bin/bitrise
 RUN rm /usr/local/bin/envman /usr/local/bin/stepman
 RUN bitrise setup
@@ -42,5 +42,5 @@ RUN /root/.bitrise/tools/stepman update
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2016_10_24_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2016_11_09_1
 CMD bitrise --version
