@@ -1,3 +1,8 @@
+## UPCOMING
+
+* `bitrise` (CLI): `1.5.6`
+
+
 ## `v2017_03_14_1`
 
 * `bitrise` (CLI): `1.5.5`
