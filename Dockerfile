@@ -24,7 +24,7 @@ COPY ./ssh/config /root/.ssh/config
 
 #
 # Install Bitrise CLI
-RUN curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.8.0/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise
+RUN curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.9.0/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise
 RUN chmod +x /usr/local/bin/bitrise
 # remove ancient versions of envman & stepman, which were installed in /usr/local/bin
 RUN rm /usr/local/bin/envman /usr/local/bin/stepman
