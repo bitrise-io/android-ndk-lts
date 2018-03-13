@@ -1,5 +1,6 @@
 FROM bitriseio/android-ndk:2016_05_26_1
 
+ENV TOOL_VER_BITRISE_CLI="1.14.0"
 
 # ------------------------------------------------------
 
@@ -24,7 +25,7 @@ COPY ./ssh/config /root/.ssh/config
 
 #
 # Install Bitrise CLI
-RUN curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.13.0/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise
+RUN curl -fL https://github.com/bitrise-io/bitrise/releases/download/${TOOL_VER_BITRISE_CLI}/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise
 RUN chmod +x /usr/local/bin/bitrise
 # remove ancient versions of envman & stepman, which were installed in /usr/local/bin
 RUN rm /usr/local/bin/envman /usr/local/bin/stepman
