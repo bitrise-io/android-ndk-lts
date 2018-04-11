@@ -1,6 +1,6 @@
 FROM bitriseio/android-ndk:2016_05_26_1
 
-ENV TOOL_VER_BITRISE_CLI="1.14.0"
+ENV TOOL_VER_BITRISE_CLI="1.15.0"
 
 # ------------------------------------------------------
 
