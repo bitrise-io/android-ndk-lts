@@ -1,5 +1,9 @@
 ## UPCOMING
 
+## `v2018_05_16_2`
+
+* `bitrise` (CLI): `1.16.1`
+
 ## `v2018_05_16_1`
 
 * Docker tag moved to `quay.io/bitriseio/android-ndk:v2018_05_05-06_07-b990`
