@@ -1,6 +1,6 @@
 FROM quay.io/bitriseio/android-ndk:v2018_05_05-06_07-b990
 
-ENV TOOL_VER_BITRISE_CLI="1.25.0"
+ENV TOOL_VER_BITRISE_CLI="1.26.0"
 
 # ------------------------------------------------------
 
@@ -42,5 +42,5 @@ RUN bitrise stepman update
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2018_12_12_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2019_01_09_1
 CMD bitrise --version
