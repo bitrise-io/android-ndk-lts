@@ -9,10 +9,8 @@ RUN apt-get update -qq
 
 # ------------------------------------------------------
 # --- Git config
-
-# Git config
-RUN git config --global user.email email@example.com
-RUN git config --global user.name "J. Doe"
+RUN git config --global user.email "please-set-your-email@bitrise.io" \
+    && git config --global user.name "J. Doe (https://www.git-tower.com/learn/git/faq/change-author-name-email)"
 
 # ------------------------------------------------------
 # --- SSH config
@@ -42,5 +40,5 @@ RUN bitrise stepman update
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2019_02_05_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2019_02_13_1
 CMD bitrise --version
