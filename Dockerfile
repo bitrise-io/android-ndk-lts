@@ -10,7 +10,7 @@ RUN apt-get update -qq
 # ------------------------------------------------------
 # --- Git config
 RUN git config --global user.email "please-set-your-email@bitrise.io" \
-    && git config --global user.name "J. Doe (https://www.git-tower.com/learn/git/faq/change-author-name-email)"
+    && git config --global user.name "J. Doe (https://devcenter.bitrise.io/builds/setting-your-git-credentials-on-build-machines/)"
 
 # ------------------------------------------------------
 # --- SSH config
