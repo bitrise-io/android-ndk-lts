@@ -2,7 +2,5 @@
 # and published. Pinned versions are considered production ready, and the "latest" pinned version
 # is pre-cached on the [bitrise.io](https://www.bitrise.io/) Linux/Android Virtual Machines.
 # Read more about how versions are handled in the `README.md`.
-
-FROM quay.io/bitriseio/android-ndk-lts:alpha-v2019_04_19-04_01-b1294
-
+FROM quay.io/bitriseio/android-ndk-lts:alpha-v2019_04_25-04_01-b1302
 CMD bitrise --version
