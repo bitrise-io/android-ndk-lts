@@ -4,7 +4,7 @@
 # Read more about how versions are handled in the `README.md`.
 
 
-FROM quay.io/bitriseio/android-ndk-lts:alpha-v2019_07_11-04_01-b1397
+FROM quay.io/bitriseio/android-ndk-lts:alpha-v2019_07_18-04_01-b1407
 
 
 CMD bitrise --version
