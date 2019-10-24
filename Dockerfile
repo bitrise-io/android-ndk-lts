@@ -40,5 +40,5 @@ RUN bitrise stepman update
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2019_09_11_24_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2019_10_24_1
 CMD bitrise --version
