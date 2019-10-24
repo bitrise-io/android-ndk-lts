@@ -1,6 +1,6 @@
 FROM quay.io/bitriseio/android-ndk:v2018_05_05-06_07-b990
 
-ENV TOOL_VER_BITRISE_CLI="1.34.0"
+ENV TOOL_VER_BITRISE_CLI="1.35.0"
 
 # ------------------------------------------------------
 
