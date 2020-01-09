@@ -33,6 +33,10 @@ RUN bitrise stepman -version
 RUN bitrise stepman setup -c https://github.com/bitrise-io/bitrise-steplib.git
 RUN bitrise stepman update
 
+# Install fixed npm version
+# releases: https://github.com/npm/cli/releases
+RUN npm install -g npm@6.13.4
+
 
 # ------------------------------------------------------
 # --- Cleanup, Workdir and revision
@@ -40,5 +44,5 @@ RUN bitrise stepman update
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2019_12_12_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2019_01_09_1
 CMD bitrise --version
