@@ -1,6 +1,6 @@
 FROM quay.io/bitriseio/android-ndk:v2018_05_05-06_07-b990
 
-ENV TOOL_VER_BITRISE_CLI="1.39.0"
+ENV TOOL_VER_BITRISE_CLI="1.39.1"
 
 # ------------------------------------------------------
 
@@ -44,5 +44,5 @@ RUN npm install -g npm@6.13.4
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2020_02_12_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2020_02_26_1
 CMD bitrise --version
