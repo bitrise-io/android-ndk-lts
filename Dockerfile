@@ -1,6 +1,7 @@
 FROM quay.io/bitriseio/android-ndk:v2018_05_05-06_07-b990
 
-ENV TOOL_VER_BITRISE_CLI="1.41.2"
+ENV TOOL_VER_BITRISE_CLI="1.41.2" \
+    TOOL_VER_GO="1.13"
 
 # ------------------------------------------------------
 
@@ -37,6 +38,20 @@ RUN bitrise stepman update
 # releases: https://github.com/npm/cli/releases
 RUN npm install -g npm@6.13.4
 
+# install Go
+#  from official binary package
+RUN wget -q https://storage.googleapis.com/golang/go${TOOL_VER_GO}.linux-amd64.tar.gz -O go-bins.tar.gz \
+    && tar -C /usr/local -xvzf go-bins.tar.gz \
+    && rm go-bins.tar.gz
+# ENV setup
+ENV PATH $PATH:/usr/local/go/bin
+# Go Workspace dirs & envs
+# From the official Golang Dockerfile
+#  https://github.com/docker-library/golang
+ENV GOPATH /bitrise/go
+ENV PATH $GOPATH/bin:$PATH
+# 755 because Ruby complains if 777 (warning: Insecure world writable dir ... in PATH)
+RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 755 "$GOPATH"
 
 # ------------------------------------------------------
 # --- Cleanup, Workdir and revision
