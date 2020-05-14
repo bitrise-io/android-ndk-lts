@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## '2020_05_14_1'
+* `Install up-to-date Go`
+
 ## '2020_04_28_1'
 * `Bitrise cli: 1.41.2`
 
