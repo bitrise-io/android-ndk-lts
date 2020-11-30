@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2020_11_27_1`
+* `jq preinstalled`
+
 ## '2020_11_03'
 * `Bitrise cli: 1.44.0`
 
