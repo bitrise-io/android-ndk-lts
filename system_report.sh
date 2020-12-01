@@ -51,3 +51,4 @@ tree -L 2 /opt/android-ndk
 echo
 
 ver_line="$(jq --version)" ; echo "* jq: $ver_line"
+ver_line="$(aws --version)" ; echo "* aws-cli: $ver_line"
