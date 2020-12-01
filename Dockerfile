@@ -43,8 +43,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
     awscli
 
 
-
-
 # ------------------------------------------------------
 # --- Cleanup, Workdir and revision
 
