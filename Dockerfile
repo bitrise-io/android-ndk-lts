@@ -37,8 +37,13 @@ RUN bitrise stepman update
 # releases: https://github.com/npm/cli/releases
 RUN npm install -g npm@6.13.4
 
-# --- Pre-install jq
-RUN sudo apt-get -y install jq
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
+    jq \
+    awscli
+
+
+
 
 # ------------------------------------------------------
 # --- Cleanup, Workdir and revision
