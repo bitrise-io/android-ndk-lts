@@ -35,7 +35,7 @@ RUN bitrise stepman update
 
 # Install fixed npm version
 # releases: https://github.com/npm/cli/releases
-RUN npm install -g npm@6.13.4
+RUN npm install -g npm@6.13.4 appcenter-cli
 
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
