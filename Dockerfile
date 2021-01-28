@@ -10,7 +10,8 @@ RUN apt-get update -qq
 RUN add-apt-repository ppa:openjdk-r/ppa \
     && dpkg --add-architecture i386
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-11-jdk
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
+    && apt-get install -y openjdk-11-jdk
 
 # Keystore format has changed since JAVA 8 https://bugs.launchpad.net/ubuntu/+source/openjdk-9/+bug/1743139
 RUN mv /etc/ssl/certs/java/cacerts /etc/ssl/certs/java/cacerts.old \
