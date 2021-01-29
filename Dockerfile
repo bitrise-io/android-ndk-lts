@@ -6,6 +6,21 @@ ENV TOOL_VER_BITRISE_CLI="1.44.0"
 
 RUN apt-get update -qq
 
+# --- Install java 11-jdk
+RUN add-apt-repository ppa:openjdk-r/ppa \
+    && dpkg --add-architecture i386
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
+    && apt-get install -y openjdk-11-jdk
+
+# Keystore format has changed since JAVA 8 https://bugs.launchpad.net/ubuntu/+source/openjdk-9/+bug/1743139
+RUN mv /etc/ssl/certs/java/cacerts /etc/ssl/certs/java/cacerts.old \
+    && keytool -importkeystore -destkeystore /etc/ssl/certs/java/cacerts -deststoretype jks -deststorepass changeit -srckeystore /etc/ssl/certs/java/cacerts.old -srcstoretype pkcs12 -srcstorepass changeit \
+    && rm /etc/ssl/certs/java/cacerts.old
+
+# Select JAVA 8  as default
+RUN sudo update-java-alternatives --jre-headless --set java-1.8.0-openjdk-amd64
+RUN sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 
 # ------------------------------------------------------
 # --- Git config
