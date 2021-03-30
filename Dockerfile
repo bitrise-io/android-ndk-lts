@@ -70,5 +70,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2020_05_19_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2021_03_30
 CMD bitrise --version
