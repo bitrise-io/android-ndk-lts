@@ -4,11 +4,14 @@ ENV TOOL_VER_BITRISE_CLI="1.44.0"
 
 # ------------------------------------------------------
 
-RUN apt-get update -qq
+# --- Add ppa
+RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com \
+    && add-apt-repository ppa:git-core/ppa \
+    && add-apt-repository ppa:openjdk-r/ppa \
+    && apt-get update -qq
 
 # --- Install java 11-jdk
-RUN add-apt-repository ppa:openjdk-r/ppa \
-    && dpkg --add-architecture i386
+RUN dpkg --add-architecture i386
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
     && apt-get install -y openjdk-11-jdk
@@ -23,7 +26,10 @@ RUN sudo update-java-alternatives --jre-headless --set java-1.8.0-openjdk-amd64
 RUN sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 
 # ------------------------------------------------------
-# --- Git config
+# --- Update and configure Git
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install git 
+RUN git --version
 RUN git config --global user.email "please-set-your-email@bitrise.io" \
     && git config --global user.name "J. Doe (https://devcenter.bitrise.io/builds/setting-your-git-credentials-on-build-machines/)"
 
