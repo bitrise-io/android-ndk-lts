@@ -1,6 +1,6 @@
 FROM quay.io/bitriseio/android-ndk:v2018_05_05-06_07-b990
 
-ENV TOOL_VER_BITRISE_CLI="1.44.0"
+ENV TOOL_VER_BITRISE_CLI="1.48.0"
 
 # ------------------------------------------------------
 
@@ -70,5 +70,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2021_03_30
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2021_09_29
 CMD bitrise --version
