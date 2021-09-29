@@ -21,9 +21,10 @@ RUN mv /etc/ssl/certs/java/cacerts /etc/ssl/certs/java/cacerts.old \
     && keytool -importkeystore -destkeystore /etc/ssl/certs/java/cacerts -deststoretype jks -deststorepass changeit -srckeystore /etc/ssl/certs/java/cacerts.old -srcstoretype pkcs12 -srcstorepass changeit \
     && rm /etc/ssl/certs/java/cacerts.old
 
-# Select JAVA 8  as default
-RUN sudo update-java-alternatives --jre-headless --set java-1.8.0-openjdk-amd64
-RUN sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+# Select JAVA 11  as default
+RUN sudo update-alternatives --set javac /usr/lib/jvm/java-11-openjdk-amd64/bin/javac
+RUN sudo update-alternatives --set java /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
 # ------------------------------------------------------
 # --- Update and configure Git
@@ -70,5 +71,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2021_09_29
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2021_09_29_1
 CMD bitrise --version
