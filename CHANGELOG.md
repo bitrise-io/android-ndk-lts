@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2021_09_29_1`
+* `Set Java 11 as default`
+
 ## `v2021_09_29`
 * `update Bitrise CLI to 1.48.0`
 
