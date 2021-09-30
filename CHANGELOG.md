@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2021_09_30`
+* `update golang to 1.16.5`
+
 ## `v2021_09_29_1`
 * `Set Java 11 as default`
 

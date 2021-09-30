@@ -1,6 +1,7 @@
 FROM quay.io/bitriseio/android-ndk:v2018_05_05-06_07-b990
 
-ENV TOOL_VER_BITRISE_CLI="1.48.0"
+ENV TOOL_VER_BITRISE_CLI="1.48.0" \
+    TOOL_VER_GO="1.16.5"
 
 # ------------------------------------------------------
 
@@ -9,6 +10,12 @@ RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com \
     && add-apt-repository ppa:git-core/ppa \
     && add-apt-repository ppa:openjdk-r/ppa \
     && apt-get update -qq
+
+# install Go
+#  from official binary package
+RUN wget -q https://storage.googleapis.com/golang/go${TOOL_VER_GO}.linux-amd64.tar.gz -O go-bins.tar.gz \
+    && tar -C /usr/local -xvzf go-bins.tar.gz \
+    && rm go-bins.tar.gz
 
 # --- Install java 11-jdk
 RUN dpkg --add-architecture i386
@@ -71,5 +78,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
 # Cleaning
 RUN apt-get clean
 
-ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2021_09_29_1
+ENV BITRISE_DOCKER_REV_NUMBER_ANDROID_NDK_LTS v2021_09_30
 CMD bitrise --version
