@@ -19,8 +19,8 @@ RUN mkdir -p /etc/apt/sources.list.d \
     && cp /usr/share/doc/apt/examples/sources.list /etc/apt/sources.list \
     && apt update
 # --- Add ppa
-RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com \
-    && add-apt-repository ppa:git-core/ppa \
+RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+RUN add-apt-repository ppa:git-core/ppa \
     && add-apt-repository ppa:openjdk-r/ppa
 
 RUN apt-get update -qq
