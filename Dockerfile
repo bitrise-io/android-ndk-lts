@@ -5,6 +5,13 @@ ENV TOOL_VER_BITRISE_CLI="1.48.0" \
 
 # ------------------------------------------------------
 
+#
+# This is a workaround / fix story is in the backlog
+#
+RUN apt-get update -qq
+RUN apt-get install ca-certificates -y \
+    && update-ca-certificates --fresh
+
 # --- Add ppa
 RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com \
     && add-apt-repository ppa:git-core/ppa \
