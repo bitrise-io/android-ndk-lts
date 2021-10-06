@@ -21,8 +21,9 @@ RUN mkdir -p /etc/apt/sources.list.d \
 # --- Add ppa
 RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com \
     && add-apt-repository ppa:git-core/ppa \
-    && add-apt-repository ppa:openjdk-r/ppa \
-    && apt-get update -qq
+    && add-apt-repository ppa:openjdk-r/ppa
+
+RUN apt-get update -qq
 
 # install Go
 #  from official binary package
