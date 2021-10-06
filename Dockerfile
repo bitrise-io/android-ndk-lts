@@ -15,7 +15,7 @@ RUN apt-get clean
 RUN apt-get install ca-certificates -y \
     && update-ca-certificates --fresh
 
-RUN mkdir /etc/apt/sources.list.d \
+RUN mkdir -p /etc/apt/sources.list.d \
     && cp /usr/share/doc/apt/examples/sources.list /etc/apt/sources.list \
     && apt update
 # --- Add ppa
