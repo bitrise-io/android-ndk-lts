@@ -15,7 +15,7 @@ RUN apt-get clean
 RUN apt-get install ca-certificates -y \
     && update-ca-certificates --fresh
 
-RUN rm /var/lib/apt/lists/* -vf
+RUN rm -rf /var/lib/apt/lists/* -vf
 # --- Add ppa
 RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com \
     && add-apt-repository ppa:git-core/ppa \
