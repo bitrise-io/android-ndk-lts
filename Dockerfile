@@ -12,8 +12,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 23E7166788B63E1E
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B57C5C2836F4BEB
 RUN apt-get clean
-RUN apt-get install --fix-missing ca-certificates -y
-RUN update-ca-certificates --fresh
 
 RUN mkdir -p /etc/apt/sources.list.d \
     && cp /usr/share/doc/apt/examples/sources.list /etc/apt/sources.list
@@ -24,6 +22,8 @@ RUN add-apt-repository ppa:git-core/ppa \
 
 RUN rm /etc/ssl/certs/DST_Root_CA_X3.pem \
     && sed -i '/mozilla\/DST_Root_CA_X3.crt/d' /etc/ca-certificates.conf
+RUN apt-get install --fix-missing ca-certificates -y
+RUN update-ca-certificates --fresh
 RUN apt-get update -qq
 
 # install Go
