@@ -17,14 +17,14 @@ RUN update-ca-certificates --fresh
 
 RUN mkdir -p /etc/apt/sources.list.d \
     && cp /usr/share/doc/apt/examples/sources.list /etc/apt/sources.list
-RUN rm /etc/ssl/certs/DST_Root_CA_X3.pem \
-    && sed -i '/mozilla\/DST_Root_CA_X3.crt/d' /etc/ca-certificates.conf
 # --- Add ppa
 RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 RUN add-apt-repository ppa:git-core/ppa \
     && add-apt-repository ppa:openjdk-r/ppa
 
-RUN apt update
+RUN rm /etc/ssl/certs/DST_Root_CA_X3.pem \
+    && sed -i '/mozilla\/DST_Root_CA_X3.crt/d' /etc/ca-certificates.conf
+RUN apt-get update -qq
 
 # install Go
 #  from official binary package
