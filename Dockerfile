@@ -51,7 +51,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 # ------------------------------------------------------
 # --- Update and configure Git
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install git 
+RUN apt-get install -y git 
 
 RUN git config --global user.email "please-set-your-email@bitrise.io" \
     && git config --global user.name "J. Doe (https://devcenter.bitrise.io/builds/setting-your-git-credentials-on-build-machines/)"
