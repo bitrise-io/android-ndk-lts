@@ -13,7 +13,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 23E7166788B63E1E
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B57C5C2836F4BEB
 RUN apt-get clean
 RUN apt-get install --reinstall ca-certificates -y \
-    && update-ca-certificates --fresh
+    && update-ca-certificates --fresh --fix-missing
 
 RUN mkdir -p /etc/apt/sources.list.d \
     && cp /usr/share/doc/apt/examples/sources.list /etc/apt/sources.list
