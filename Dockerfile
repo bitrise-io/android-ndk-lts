@@ -22,7 +22,7 @@ RUN apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 RUN add-apt-repository ppa:git-core/ppa \
     && add-apt-repository ppa:openjdk-r/ppa
 
-RUN apt-get update -qq
+RUN apt update
 
 # install Go
 #  from official binary package
